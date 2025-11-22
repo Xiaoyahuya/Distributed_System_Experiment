@@ -2,7 +2,7 @@ all:	d1_interleaving d2_increment d3_atomic	p_c
 	./d1_interleaving
 	./d2_increment
 	./d3_atomic
-	#./p_c
+	./p_c
 
 d1_interleaving:	d1_interleaving.c
 	gcc -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -o d1_interleaving d1_interleaving.c -lpthread
@@ -16,3 +16,6 @@ d3_atomic:	d3_atomic.c
 
 p_c:	p_c.c
 	gcc -o p_c p_c.c -lpthread
+
+clean:
+	rm -f d1_interleaving d2_increment d3_atomic p_c

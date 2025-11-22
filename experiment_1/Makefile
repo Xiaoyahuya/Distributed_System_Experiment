@@ -12,3 +12,6 @@ d2_increment:	d2_increment.c
 d3_atomic:	d3_atomic.c
 	# Uses GCC-specific built-in atomic function
 	gcc -o d3_atomic d3_atomic.c -lpthread
+
+clean:
+	rm -f d1_interleaving d2_increment d3_atomic
